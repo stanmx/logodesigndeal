@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @logo.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @logo.description %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= image_tag @logo.image.url(:medium).to_s if @logo.image? %>
+</p>
+
+<p>
+  <b>Carrousel:</b>
+  <%= @logo.carrousel %>
+</p>
+
+<p>
+  <b>Slider:</b>
+  <%= @logo.slider %>
+</p>
+
+
+<%= link_to 'Edit', edit_logo_path(@logo) %> |
+<%= link_to 'Back', logos_path %>
