@@ -1,24 +1,24 @@
-<h1>Listing logos</h1>
+<div class="page-header">
+    <h2>Listing logos</h2>
+</div>
 
-<table>
+<div class="row-fluid">
+
+<table class="table table-bordered table-responsive">
   <tr>
     <th>Title</th>
-    <th>Description</th>
     <th>Image</th>
-    <th>Carrousel</th>
-    <th>Slider</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>In home carrousel</th>
+    <th>In gallery slider</th>
+    <th colspan="3">Actions</th>
   </tr>
 
 <% @logos.each do |logo| %>
   <tr>
     <td><%= logo.title %></td>
-    <td><%= logo.description %></td>
     <td><%= image_tag logo.image.url(:thumb).to_s if logo.image? %></td>
-    <td><%= logo.carrousel %></td>
-    <td><%= logo.slider %></td>
+    <td><%= humanize(logo.carrousel) %></td>
+    <td><%= humanize(logo.slider) %></td>
     <td><%= link_to 'Show', logo %></td>
     <td><%= link_to 'Edit', edit_logo_path(logo) %></td>
     <td><%= link_to 'Destroy', logo, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
@@ -26,6 +26,6 @@
 <% end %>
 </table>
 
-<br />
+<%= link_to 'New Logo', new_logo_path, :class => 'btn btn-primary' %>
 
-<%= link_to 'New Logo', new_logo_path %>
+</div>

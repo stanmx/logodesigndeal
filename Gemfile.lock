@@ -46,6 +46,9 @@ GEM
     hike (1.2.3)
     i18n (0.6.1)
     journey (1.0.4)
+    jquery-fileupload-rails (0.4.1)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -98,6 +101,11 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
+    twitter-bootstrap-rails (2.2.7)
+      actionpack (>= 3.1)
+      execjs
+      rails (>= 3.1)
+      railties (>= 3.1)
     tzinfo (0.3.37)
     uglifier (2.1.2)
       execjs (>= 0.3.0)
@@ -109,10 +117,12 @@ PLATFORMS
 DEPENDENCIES
   carrierwave
   coffee-rails (~> 3.2.1)
+  jquery-fileupload-rails
   jquery-rails
   json
   rails (= 3.2.13)
   rmagick
   sass-rails (~> 3.2.3)
   sqlite3
+  twitter-bootstrap-rails
   uglifier (>= 1.0.3)

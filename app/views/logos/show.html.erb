@@ -1,30 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @logo.title %>
-</p>
+<div class="page-header">
+  <h2><%= @logo.title %></h2>
+</div>
 
-<p>
-  <b>Description:</b>
-  <%= @logo.description %>
-</p>
+<div class="row-fluid">
+  <div class="span6">
+    <%= image_tag @logo.image.url(:medium).to_s if @logo.image? %>
 
-<p>
-  <b>Image:</b>
-  <%= image_tag @logo.image.url(:medium).to_s if @logo.image? %>
-</p>
+  </div>
 
-<p>
-  <b>Carrousel:</b>
-  <%= @logo.carrousel %>
-</p>
-
-<p>
-  <b>Slider:</b>
-  <%= @logo.slider %>
-</p>
-
-
-<%= link_to 'Edit', edit_logo_path(@logo) %> |
-<%= link_to 'Back', logos_path %>
+  <div class="span6">
+    <p class="lead">
+      <%= @logo.description %>
+    </p>
+    <h4>Present in...</h4>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>In home carrousel</th>
+          <th>In gallery slider</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= humanize(@logo.carrousel) %></td>
+          <td><%= humanize(@logo.slider) %></td>
+        </tr>
+      </tbody>
+    </table>
+    <%= link_to 'Edit', edit_logo_path(@logo), :class => 'btn' %>
+    <%= link_to 'Back', logos_path, :class => 'btn' %>
+  </div>
+</div>
