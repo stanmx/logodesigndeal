@@ -46,8 +46,20 @@
           </a>
           <a class="brand" href="#">Logo Design Deal</a>
           <div class="container-fluid nav-collapse">
+          <% if user_signed_in? %>
             <ul class="nav">
               <li><%= link_to "Listing logos", logos_path  %></li>
+            </ul>
+          <% end %>
+            <ul class="nav nav-right">
+            <% if user_signed_in? %>
+              <li class="current_log">Logged in as <b><%= current_user.email %></b>.</li>
+              <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+              <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+            <% else %>
+              <li><%= link_to 'Sign up', new_user_registration_path %></li>
+              <li><%= link_to 'Login', new_user_session_path %></li>
+            <% end %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -56,10 +68,15 @@
 
     <div class="container-fluid">
       <div class="row-fluid">
+      <% if user_signed_in? %>
         <div class="span9">
+      <% else %>
+        <div class="span12">
+      <% end %>
           <%#= bootstrap_flash %>
           <%= yield %>
         </div>
+        <% if user_signed_in? %>
         <div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
@@ -69,6 +86,7 @@
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
+        <% end %>
       </div><!--/row-->
 
       <hr />

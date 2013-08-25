@@ -6,6 +6,15 @@
   =require twitter-bootstrap-static/fontawesome
   */
 
+  .nav-right {
+    float: right !important;
+  }
+
+  .current_log {
+    margin: 9px 0;
+    color: #999;
+  }
+
   .row-fluid {
 	 margin-bottom: 20px;
   }
@@ -36,5 +45,11 @@
     .table-responsive td:nth-child(3),
     .table-responsive th:nth-child(4),
     .table-responsive td:nth-child(4){display:none;}
+  }
+
+  @media only screen and (max-width: 800px) {
+    .nav-right {
+      float: none !important;
+    }
   }
 
