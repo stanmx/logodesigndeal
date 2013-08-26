@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require jquery-fileupload/basic
+//= require bootstrap-wysihtml5
 //= require_tree .

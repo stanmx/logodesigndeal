@@ -31,6 +31,11 @@
     margin-bottom: 20px;
   }
 
+  .medium_photo {
+    display: block;
+    margin: 0 auto 20px;
+  } 
+
   @media only screen and (max-width: 360px) {
     .table-responsive th:nth-child(2),
     .table-responsive td:nth-child(2){display:none;}

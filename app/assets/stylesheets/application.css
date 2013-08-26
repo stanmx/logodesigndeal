@@ -10,5 +10,6 @@
  *
  *= require_self
  *= require jquery.fileupload-ui
+ *= require bootstrap-wysihtml5
  *= require_tree .
  */

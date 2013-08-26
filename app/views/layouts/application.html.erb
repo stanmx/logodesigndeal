@@ -49,6 +49,7 @@
           <% if user_signed_in? %>
             <ul class="nav">
               <li><%= link_to "Listing logos", logos_path  %></li>
+              <li><%= link_to "Listing posts", posts_path  %></li>
             </ul>
           <% end %>
             <ul class="nav nav-right">
@@ -73,7 +74,7 @@
       <% else %>
         <div class="span12">
       <% end %>
-          <%#= bootstrap_flash %>
+          <%= bootstrap_flash %>
           <%= yield %>
         </div>
         <% if user_signed_in? %>
@@ -82,7 +83,7 @@
             <ul class="nav nav-list">
               <li class="nav-header">Sidebar</li>
               <li><%= link_to "Listing logos", logos_path  %></li>
-
+              <li><%= link_to "Listing posts", posts_path  %></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
