@@ -2,7 +2,7 @@ class LogosController < ApplicationController
   # GET /logos
   # GET /logos.json
   def index
-    @logos = Logo.all
+    @logos = Logo.paginate(:page => params[:page], :per_page => 20)
 
     respond_to do |format|
       format.html # index.html.erb

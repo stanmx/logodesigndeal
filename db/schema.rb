@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130826213917) do
+ActiveRecord::Schema.define(:version => 20130828064652) do
 
   create_table "logos", :force => true do |t|
     t.string   "title"
@@ -21,6 +21,12 @@ ActiveRecord::Schema.define(:version => 20130826213917) do
     t.boolean  "slider"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "mails", :force => true do |t|
+    t.string   "address"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "posts", :force => true do |t|

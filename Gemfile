@@ -31,6 +31,11 @@ gem 'jquery-fileupload-rails'
 gem 'devise'
 gem 'bootstrap-wysihtml5-rails'
 gem 'acts-as-taggable-on'
+gem 'will_paginate', '~> 3.0.0'
+
+group :production do
+  gem 'mysql2'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

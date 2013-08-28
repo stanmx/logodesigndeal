@@ -3,9 +3,9 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     if params[:tag]
-      @posts = Post.tagged_with(params[:tag])
+      @posts = Post.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 20)
     else
-      @posts = Post.all
+      @posts = Post.paginate(:page => params[:page], :per_page => 20)
     end
 
     respond_to do |format|

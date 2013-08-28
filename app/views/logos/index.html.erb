@@ -25,7 +25,7 @@
   </tr>
 <% end %>
 </table>
-
+<%= pagination_links @logos, :previous_label => '&laquo;', :next_label => '&raquo;' %>
 <%= link_to 'New Logo', new_logo_path, :class => 'btn btn-primary' %>
 
 </div>
