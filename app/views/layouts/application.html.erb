@@ -50,17 +50,21 @@
             <ul class="nav">
               <li><%= link_to "Logos", logos_path  %></li>
               <li><%= link_to "Posts", posts_path  %></li>
-              <li><%= link_to "Mails", mails_path  %></li>
+              <li><%= link_to "Emails", emails_path  %></li>
             </ul>
           <% end %>
             <ul class="nav nav-right">
             <% if user_signed_in? %>
-              <li class="current_log">Logged in as <b><%= current_user.email %></b>.</li>
-              <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
-              <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+              <li class="current_log">Signed in as <b><%= current_user.email %></b>.</li>
+              <% if Rails.env.development? %>
+                <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+              <% end %>
+              <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
             <% else %>
+              <% if Rails.env.development? %>
               <li><%= link_to 'Sign up', new_user_registration_path %></li>
-              <li><%= link_to 'Login', new_user_session_path %></li>
+              <% end %>
+              <li><%= link_to 'Sign in', new_user_session_path %></li>
             <% end %>
             </ul>
           </div><!--/.nav-collapse -->
@@ -85,7 +89,7 @@
               <li class="nav-header">Sidebar</li>
               <li><%= link_to "Listing logos", logos_path  %></li>
               <li><%= link_to "Listing posts", posts_path  %></li>
-              <li><%= link_to "Listing mails", mails_path  %></li>
+              <li><%= link_to "Listing emails", emails_path  %></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->

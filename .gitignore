@@ -16,3 +16,6 @@
 
 # Ignore all uploadfiles.
 /public/uploads
+
+# Ignore MySQL database configuration.
+/config/pro-database.yml

@@ -1,10 +1,8 @@
 Logodesigndeal::Application.routes.draw do
 
-  resources :mails
-
+  resources :emails
 
   devise_for :users
-  devise_for :users, :path => 'users', :path_names => { :sign_in => 'login', :sign_out => 'logout' }
 
   root :to => "logos#index"
   resources :logos
